@@ -114,6 +114,14 @@ nav.scrolled{background:rgba(243,239,228,.82);backdrop-filter:blur(14px);padding
 .ham.open span:nth-child(2){opacity:0}
 .ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 @media(max-width:860px){.nav-links{display:none}.ham{display:flex}}
+.nav-logo,.nav-cta{white-space:nowrap}
+@media(max-width:480px){
+  nav,nav.scrolled{padding-left:1.1rem;padding-right:1.1rem}
+  .nav-logo{font-size:1.3rem}
+  .nav-r{gap:.7rem}
+  .nav-cta{font-size:.62rem;padding:.6rem .85rem}
+}
+@media(max-width:360px){.nav-cta{display:none}}
 
 /* ── MOBILE MENU ── */
 .mob-menu{position:fixed;inset:0;background:var(--ink);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;opacity:0;pointer-events:none;transition:opacity .35s}
