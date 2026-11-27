@@ -458,6 +458,57 @@ a.proj-row{text-decoration:none;color:inherit}
 .faq-list summary:focus-visible{outline:2px solid var(--terra);outline-offset:2px}
 .faq-list details p{padding:0 2rem 1.3rem 0;font-size:.94rem;line-height:1.65;color:var(--t-body)}
 
+/* ── FLOW: quote to paid ── */
+.flow{background:var(--paper);position:relative;border-top:1px solid var(--line)}
+.flow-track{height:460vh}
+.flow-sticky{position:sticky;top:0;height:100vh;max-width:1240px;margin:0 auto;padding:5.5rem 2rem 2rem;display:grid;grid-template-columns:1fr minmax(280px,340px);gap:4rem;align-items:center}
+.flow-h{font-size:clamp(2.4rem,4.4vw,4rem);margin-bottom:1.6rem}
+.fl-steps{list-style:none;display:flex;flex-direction:column;max-width:30rem}
+.fl-steps li{display:flex;gap:1rem;padding:.55rem 0;opacity:.35;transition:opacity .35s}
+.fl-steps li.on{opacity:.65}
+.fl-steps li.is-cur{opacity:1}
+.fl-n{font-family:'Bebas Neue',sans-serif;font-size:1.35rem;color:var(--terra);line-height:1.15;min-width:1.8rem}
+.fl-t{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:.02em;color:var(--ink);line-height:1.1}
+.fl-steps p{font-size:.92rem;line-height:1.5;color:var(--t-body);max-height:0;overflow:hidden;transition:max-height .4s,margin .4s}
+.fl-steps li.is-cur p{max-height:5rem;margin-top:.25rem}
+.fl-bar{height:2px;background:var(--line);margin-top:1rem;max-width:30rem}
+.fl-bar span{display:block;height:100%;background:var(--terra);width:calc(var(--fp,0) * 100%)}
+.fl-note{font-size:.82rem;line-height:1.5;color:var(--t-muted);margin-top:1rem;max-width:30rem}
+.fl-phone{width:100%;max-width:330px;height:min(600px,74vh);margin:0 auto;border:10px solid var(--ink);border-radius:36px;background:#ece5dd;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 40px 70px -30px rgba(16,21,13,.45)}
+.fl-ph-top{background:var(--forest);color:var(--paper);padding:.8rem 1rem;display:flex;gap:.7rem;align-items:center;flex-shrink:0}
+.fl-av{width:34px;height:34px;border-radius:50%;background:var(--terra);display:grid;place-items:center;font-family:'Bebas Neue',sans-serif;font-size:1rem;color:#fff;flex-shrink:0}
+.fl-ph-name{font-weight:600;font-size:.9rem}
+.fl-ph-sub{font-size:.68rem;opacity:.7}
+.fl-chat{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding:.4rem .8rem .9rem;overflow:hidden}
+.fl-msg,.fl-sys{max-height:0;opacity:0;transform:translateY(10px);overflow:hidden;flex-shrink:0;transition:max-height .45s,opacity .35s,transform .35s,margin .45s}
+.fl-msg.on,.fl-sys.on{max-height:16rem;opacity:1;transform:none;margin-top:.55rem}
+.fl-msg{align-self:flex-end;max-width:88%}
+.fl-msg.in{align-self:flex-start}
+.fl-msg>p,.fl-card{background:#fff;border-radius:10px;padding:.55rem .7rem;font-size:.8rem;line-height:1.4;color:var(--ink);box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.fl-msg.out .fl-card{background:#dcf0d0}
+.fl-msg time{display:block;font-size:.6rem;color:var(--t-muted);text-align:right;margin-top:.15rem}
+.fl-k{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.08em;text-transform:uppercase;color:var(--terra-d);margin-bottom:.35rem}
+.fl-row{display:flex;justify-content:space-between;gap:.8rem;font-size:.78rem}
+.fl-row b{white-space:nowrap}
+.fl-btns{display:flex;gap:.4rem;margin-top:.5rem}
+.fl-btns span{flex:1;text-align:center;font-size:.7rem;font-weight:600;color:var(--forest);background:rgba(255,255,255,.75);border-radius:6px;padding:.35rem .3rem}
+.fl-inv-foot{display:flex;gap:.6rem;align-items:center;margin-top:.55rem;padding-top:.5rem;border-top:1px dashed rgba(16,21,13,.18)}
+.fl-qr{width:46px;height:46px;flex-shrink:0;display:block}
+.fl-ok{font-size:.72rem;font-weight:600;color:var(--forest)}
+.fl-small{font-size:.66rem;color:var(--t-muted)}
+.fl-pay{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:var(--ink);line-height:1.1}
+.fl-sys{align-self:center;font-size:.68rem;background:rgba(255,255,255,.85);color:var(--t-body);border-radius:8px;padding:.35rem .7rem;text-align:center}
+.fl-sys.paid{background:var(--forest);color:var(--paper);font-weight:600;font-size:.74rem}
+.fl-cap{text-align:center;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--t-muted);margin-top:.9rem}
+.flow.static .flow-track{height:auto}
+.flow.static .flow-sticky{position:static;height:auto;padding-top:6rem;padding-bottom:6rem}
+.flow.static .fl-phone{height:auto}
+.flow.static .fl-steps li{opacity:1}
+.flow.static .fl-steps p{max-height:none;margin-top:.25rem}
+.flow.static .fl-bar{display:none}
+.flow.static .fl-msg,.flow.static .fl-sys{transition:none}
+@media(max-width:820px){.flow-sticky{grid-template-columns:1fr;gap:2.5rem;padding-left:1.25rem;padding-right:1.25rem}}
+
 /* ── FOOTER ── */
 footer{background:var(--ink);color:var(--paper);padding:2.6rem 2rem;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;border-top:1px solid var(--line-i)}
 .ft-logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.04em}
@@ -613,6 +664,42 @@ footer{background:var(--ink);color:var(--paper);padding:2.6rem 2rem;display:flex
         </ul>
         <div class="mkt-why">Why now: KSeF's last group of businesses joins on 1 January 2027.</div>
         <div class="mkt-acts"><a href="#services" class="mkt-link">See Poland offers →</a><a href="#contact" class="mkt-link quiet" data-book>Free 30-min check</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FLOW: quote to paid, driven by scroll on desktop ══ -->
+<section class="flow" id="flow" aria-labelledby="flowH">
+  <div class="flow-track">
+    <div class="flow-sticky">
+      <div class="flow-l">
+        <div class="eyebrow">How It Works</div>
+        <h2 class="sec-h flow-h" id="flowH">Quote to paid,<br><span class="italic">on WhatsApp.</span></h2>
+        <ol class="fl-steps">
+          <li data-s="1"><span class="fl-n">01</span><div><div class="fl-t">Quote</div><p>Send a quote on WhatsApp. Your customer accepts with one tap.</p></div></li>
+          <li data-s="2"><span class="fl-n">02</span><div><div class="fl-t">Job</div><p>The job is booked, assigned and closed with photos, all in one place.</p></div></li>
+          <li data-s="3"><span class="fl-n">03</span><div><div class="fl-t">Fiscal invoice</div><p>A ZIMRA-fiscalised invoice with QR code and buyer details is issued automatically.</p></div></li>
+          <li data-s="4"><span class="fl-n">04</span><div><div class="fl-t">Payment link</div><p>An EcoCash or bank payment link goes out on WhatsApp with the invoice.</p></div></li>
+          <li data-s="5"><span class="fl-n">05</span><div><div class="fl-t">Paid</div><p>The payment is matched to the invoice. No screenshots to chase.</p></div></li>
+        </ol>
+        <div class="fl-bar" aria-hidden="true"><span></span></div>
+        <p class="fl-note">In Poland, the same flow ends in KSeF instead of ZIMRA. We build it as a custom system today, and it's coming to our ops platform.</p>
+      </div>
+      <div class="flow-r">
+        <div class="fl-phone" aria-hidden="true">
+          <div class="fl-ph-top"><span class="fl-av">MS</span><div><div class="fl-ph-name">Moyo Solar</div><div class="fl-ph-sub">WhatsApp Business</div></div></div>
+          <div class="fl-chat">
+            <div class="fl-msg out" data-s="1"><div class="fl-card"><div class="fl-k">Quote · Q-1042</div><div class="fl-row"><span>Inverter service &amp; panel clean</span><b>US$480.00</b></div><div class="fl-btns"><span>Accept</span><span>Ask a question</span></div></div><time>09:12</time></div>
+            <div class="fl-msg in" data-s="1"><p>Accepted 👍 Thursday morning works.</p><time>09:20</time></div>
+            <div class="fl-sys" data-s="2">Job booked · Thu 10:00 · Tendai</div>
+            <div class="fl-sys" data-s="2">Job completed ✓ · 3 photos</div>
+            <div class="fl-msg out" data-s="3"><div class="fl-card"><div class="fl-k">Fiscal tax invoice · INV-2207</div><div class="fl-row"><span>Inverter service &amp; panel clean</span><b>US$480.00</b></div><div class="fl-inv-foot"><svg class='fl-qr' viewBox='0 0 21 21' shape-rendering='crispEdges'><rect width='21' height='21' fill='#fff'/><path fill='#10150d' d='M0 0h7v7H0zM14 0h7v7h-7zM0 14h7v7H0z'/><path fill='#fff' d='M1 1h5v5H1zM15 1h5v5h-5zM1 15h5v5H1z'/><path fill='#10150d' d='M2 2h3v3H2zM16 2h3v3h-3zM2 16h3v3H2zM8 0h1v1H8zM10 1h2v1h-2zM8 3h1v2H8zM11 4h2v1h-2zM9 6h1v2H9zM12 7h2v1h-2zM8 9h3v1H8zM0 9h2v1H0zM3 8h2v1H3zM5 10h2v1H5zM14 9h1v2h-1zM16 8h2v1h-2zM19 10h2v1h-2zM8 12h1v2H8zM10 13h3v1h-3zM12 11h1v1h-1zM15 12h2v1h-2zM18 13h1v2h-1zM9 15h2v1H9zM12 16h1v2h-1zM14 15h2v1h-2zM17 16h3v1h-3zM8 18h2v1H8zM11 19h3v1h-3zM15 18h1v3h-1zM18 19h3v1h-3z'/></svg><div><div class="fl-ok">✓ Fiscalised · ZIMRA FDMS</div><div class="fl-small">Buyer details included</div></div></div></div><time>Thu 14:05</time></div>
+            <div class="fl-msg out" data-s="4"><div class="fl-card"><div class="fl-k">Payment · INV-2207</div><div class="fl-pay">Pay US$480.00</div><div class="fl-btns"><span>EcoCash</span><span>Bank transfer</span></div></div><time>Thu 14:05</time></div>
+            <div class="fl-sys paid" data-s="5">✓ Paid US$480.00 via EcoCash · matched to INV-2207</div>
+          </div>
+        </div>
+        <div class="fl-cap">Illustrative example</div>
       </div>
     </div>
   </div>
@@ -1050,6 +1137,31 @@ if(finePointer&&!reduceMotion){
     })
   },{threshold:.05});
   obs.observe(canvas);
+})();
+
+/* ══ FLOW: quote to paid. Scroll drives the steps on wide screens; phones and reduced motion see every step at once ══ */
+(function(){
+  const fl=document.getElementById('flow');if(!fl)return;
+  const items=[...fl.querySelectorAll('[data-s]')],narrow=window.matchMedia('(max-width:820px)');
+  let last=-1;
+  function show(step){
+    if(step===last)return;last=step;
+    items.forEach(el=>{const s=+el.dataset.s;el.classList.toggle('on',s<=step);if(el.tagName==='LI')el.classList.toggle('is-cur',s===step);});
+  }
+  function update(){
+    const still=reduceMotion||narrow.matches;
+    fl.classList.toggle('static',still);
+    if(still){last=-1;show(5);return;}
+    const r=fl.getBoundingClientRect(),run=fl.offsetHeight-innerHeight;
+    const p=run>0?Math.min(1,Math.max(0,-r.top/run)):1;
+    fl.style.setProperty('--fp',p.toFixed(3));
+    show(Math.min(5,1+Math.floor(p*5)));
+  }
+  let ticking=false;
+  addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(()=>{ticking=false;update();});}},{passive:true});
+  addEventListener('resize',update);
+  narrow.addEventListener('change',()=>{last=-1;update();});
+  update();
 })();
 
 /* ══ PLATFORM MOCK: clock + counters + chart line ══ */
